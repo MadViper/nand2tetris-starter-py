@@ -5,17 +5,24 @@ help:
 	python -m n2t --help
 
 install: ## Install requirements
-	pip install -r requirements.txt
+	python -m pip install --upgrade pip
+	python -m pip install --upgrade poetry
+	poetry install --no-root
+
+lock: ## Lock project dependencies
+	poetry lock --no-update
+
+update: ## Update project dependencies
+	poetry update
 
 format: ## Run code formatters
-	isort n2t tests
-	black n2t app
+	poetry run ruff format n2t tests
+	poetry run ruff check  n2t tests --fix
 
 lint: ## Run code linters
-	isort --check n2t tests
-	black --check n2t tests
-	flake8 n2t tests
-	mypy n2t tests
+	poetry run ruff format n2t tests --check
+	poetry run ruff check  n2t tests
+	poetry run mypy n2t tests
 
 test:  ## Run tests with coverage
-	pytest --cov
+	poetry run pytest --cov --last-failed --hypothesis-profile easy
