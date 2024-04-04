@@ -22,10 +22,8 @@ Keep python conventions in mind:
 Use tools described below to avoid endless arguments related to coding style and formatting.
 They help you to catch errors, and make code more readable for your peers.
 
-- [black](https://github.com/psf/black) auto formatter
-- [isort](https://github.com/PyCQA/isort) to order imports
+- [ruff](https://docs.astral.sh/ruff/) to cache common style and formatting issues
 - [mypy](https://github.com/python/mypy) to check your static types
-- [flake8](https://github.com/PyCQA/flake8) to catch common style issues
 
 Configuration for all the tools mentioned above is provided with the project.
 You can use `make` to run each of these tools or see how to run them manually
@@ -33,8 +31,21 @@ inside the `Makefile`.
 
 ## Requirements
 
-Use following command to install needed requirements `pip install -r requirements.txt`
-you can extend requirements.txt with more packages if you need to.
+Use following command to install needed requirements
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install --upgrade poetry
+poetry install --no-root
+```
+
+You can extend pyproject.toml with more packages if you need to.
+
+## Make
+
+you can use make to install/test/format/lint you project.
+
+Note, to [install](https://stackoverflow.com/a/32127632) on Windows.
 
 ## Usage
 
