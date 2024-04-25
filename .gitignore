@@ -98,4 +98,4 @@ dmypy.json
 .idea
 .vscode
 
-/nand2tetris
+/tests/e2e/nand2tetris
