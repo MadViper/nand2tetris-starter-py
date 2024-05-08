@@ -28,6 +28,13 @@ def asm_directory(pytestconfig: pytest.Config) -> Iterable[Path]:
 
 
 @pytest.fixture(scope="module")
+def jacks_directory(pytestconfig: pytest.Config) -> Iterable[Path]:
+    name = pytestconfig.rootpath.joinpath("tests", "e2e", "jacks_for_analyzer")
+
+    yield name
+
+
+@pytest.fixture(scope="module")
 def cpu_emulator_bat(pytestconfig: pytest.Config) -> Iterable[Path]:
     name = pytestconfig.rootpath.joinpath(
         "tests", "e2e", "nand2tetris", "tools", "CPUEmulator.bat"

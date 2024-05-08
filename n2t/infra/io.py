@@ -9,6 +9,7 @@ from typing import Iterable
 
 
 class FileFormat(Enum):
+    xml = ".xml"
     hack = ".hack"
     asm = ".asm"
 
