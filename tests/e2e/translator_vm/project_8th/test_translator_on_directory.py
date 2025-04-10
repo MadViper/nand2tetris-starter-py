@@ -16,7 +16,9 @@ _TEST_PROGRAMS = [
 
 
 def run_for_all_os(
-    test_file: tuple[str, str], cpu_emulator: Path, projects_directory: Path
+    test_file: tuple[str, str],
+    cpu_emulator: Path,
+    projects_directory: Path,
 ) -> None:
     project_part, directory_name = test_file
     projects_directory_path = os.path.join(
@@ -31,7 +33,9 @@ def run_for_all_os(
 @pytest.mark.skip
 @pytest.mark.parametrize("test_file", _TEST_PROGRAMS)
 def test_run_emulator_bat(
-    test_file: tuple[str, str], cpu_emulator_bat: Path, projects_directory: Path
+    test_file: tuple[str, str],
+    cpu_emulator_bat: Path,
+    projects_directory: Path,
 ) -> None:
     run_for_all_os(test_file, cpu_emulator_bat, projects_directory)
 
@@ -39,6 +43,8 @@ def test_run_emulator_bat(
 @pytest.mark.skip
 @pytest.mark.parametrize("test_file", _TEST_PROGRAMS)
 def test_run_emulator_sh(
-    test_file: tuple[str, str], cpu_emulator_sh: Path, projects_directory: Path
+    test_file: tuple[str, str],
+    cpu_emulator_sh: Path,
+    projects_directory: Path,
 ) -> None:
     run_for_all_os(test_file, cpu_emulator_sh, projects_directory)
