@@ -19,6 +19,9 @@ format: ## Run code formatters
 	poetry run ruff format n2t tests
 	poetry run ruff check  n2t tests --fix
 
+format-unsafe:
+	poetry run ruff check n2t tests --fix --unsafe-fixes
+
 lint: ## Run code linters
 	poetry check --strict
 	poetry run ruff format n2t tests --check

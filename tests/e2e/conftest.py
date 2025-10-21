@@ -29,34 +29,26 @@ def asm_directory(pytestconfig: pytest.Config) -> Iterable[Path]:
 
 @pytest.fixture(scope="module")
 def jacks_directory(pytestconfig: pytest.Config) -> Iterable[Path]:
-    name = pytestconfig.rootpath.joinpath("tests", "e2e", "jacks_for_analyzer")
-
-    return name
+    return pytestconfig.rootpath.joinpath("tests", "e2e", "jacks_for_analyzer")
 
 
 @pytest.fixture(scope="module")
 def cpu_emulator_bat(pytestconfig: pytest.Config) -> Iterable[Path]:
-    name = pytestconfig.rootpath.joinpath(
+    return pytestconfig.rootpath.joinpath(
         "tests", "e2e", "nand2tetris", "tools", "CPUEmulator.bat"
     )
-
-    return name
 
 
 @pytest.fixture(scope="module")
 def cpu_emulator_sh(pytestconfig: pytest.Config) -> Iterable[Path]:
-    name = pytestconfig.rootpath.joinpath(
+    return pytestconfig.rootpath.joinpath(
         "tests", "e2e", "nand2tetris", "tools", "CPUEmulator.sh"
     )
-
-    return name
 
 
 @pytest.fixture(scope="module")
 def projects_directory(pytestconfig: pytest.Config) -> Iterable[Path]:
-    name = pytestconfig.rootpath.joinpath("tests", "e2e", "nand2tetris", "projects")
-
-    return name
+    return pytestconfig.rootpath.joinpath("tests", "e2e", "nand2tetris", "projects")
 
 
 def run_vm_translator_test(
