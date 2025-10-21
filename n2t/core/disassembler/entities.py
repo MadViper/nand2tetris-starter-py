@@ -28,7 +28,9 @@ class Word:
 
     def sub_bus(self, start: int, finish: int | None = None) -> str:
         finish = finish or len(self.value)
-        assert start >= 0 and finish >= 0, "Invalid sub bus range requested"
+
+        assert start >= 0, "Invalid sub bus range requested"
+        assert finish >= 0, "Invalid sub bus range requested"
 
         return self.value[start:finish]
 
