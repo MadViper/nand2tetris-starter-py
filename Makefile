@@ -10,7 +10,7 @@ install: ## Install requirements
 	poetry install --no-root
 
 lock: ## Lock project dependencies
-	poetry lock --no-update
+	poetry lock
 
 update: ## Update project dependencies
 	poetry update
@@ -20,6 +20,7 @@ format: ## Run code formatters
 	poetry run ruff check  n2t tests --fix
 
 lint: ## Run code linters
+	poetry check --strict
 	poetry run ruff format n2t tests --check
 	poetry run ruff check  n2t tests
 	poetry run mypy n2t tests
