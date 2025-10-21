@@ -1,7 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Collection
 from dataclasses import dataclass
-from typing import Collection, Optional
 
 
 @dataclass
@@ -26,7 +26,7 @@ class Word:
     def violates_alphabet(self) -> bool:
         return any(bit not in self.alphabet for bit in self.value)
 
-    def sub_bus(self, start: int, finish: Optional[int] = None) -> str:
+    def sub_bus(self, start: int, finish: int | None = None) -> str:
         finish = finish or len(self.value)
         assert start >= 0 and finish >= 0, "Invalid sub bus range requested"
 

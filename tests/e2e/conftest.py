@@ -1,7 +1,7 @@
 import os
 import subprocess
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable
 
 import pytest
 
@@ -31,7 +31,7 @@ def asm_directory(pytestconfig: pytest.Config) -> Iterable[Path]:
 def jacks_directory(pytestconfig: pytest.Config) -> Iterable[Path]:
     name = pytestconfig.rootpath.joinpath("tests", "e2e", "jacks_for_analyzer")
 
-    yield name
+    return name
 
 
 @pytest.fixture(scope="module")
@@ -40,7 +40,7 @@ def cpu_emulator_bat(pytestconfig: pytest.Config) -> Iterable[Path]:
         "tests", "e2e", "nand2tetris", "tools", "CPUEmulator.bat"
     )
 
-    yield name
+    return name
 
 
 @pytest.fixture(scope="module")
@@ -49,14 +49,14 @@ def cpu_emulator_sh(pytestconfig: pytest.Config) -> Iterable[Path]:
         "tests", "e2e", "nand2tetris", "tools", "CPUEmulator.sh"
     )
 
-    yield name
+    return name
 
 
 @pytest.fixture(scope="module")
 def projects_directory(pytestconfig: pytest.Config) -> Iterable[Path]:
     name = pytestconfig.rootpath.joinpath("tests", "e2e", "nand2tetris", "projects")
 
-    yield name
+    return name
 
 
 def run_vm_translator_test(

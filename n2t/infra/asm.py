@@ -1,8 +1,9 @@
 from __future__ import annotations
 
+from collections.abc import Iterable, Iterator
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Iterable, Iterator, Protocol
+from typing import Protocol
 
 from n2t.core import Assembler as DefaultAssembler
 from n2t.infra.io import File, FileFormat
