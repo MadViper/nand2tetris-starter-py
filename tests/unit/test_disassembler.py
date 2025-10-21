@@ -3,7 +3,6 @@ from __future__ import annotations
 from hypothesis import given
 from hypothesis.strategies import one_of
 
-from n2t.core.disassembler import Disassembler
 from tests.unit.strategies import (
     HackAssemblyPair,
     a_instructions,
@@ -13,6 +12,8 @@ from tests.unit.strategies import (
     long_words,
     short_words,
 )
+
+from n2t.core.disassembler import Disassembler
 
 
 @given(instruction=one_of(short_words(), long_words()))
