@@ -5,7 +5,7 @@ description = "Starter project for Nand 2 Tetris course."
 readme = "README.md"
 authors = []
 dynamic = ["dependencies"]
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 
 [tool.poetry.dependencies]
 typer = "*"
