@@ -10,5 +10,5 @@ class Assembler:
     def create(cls) -> Assembler:
         return cls()
 
-    def assemble(self, assembly: Iterable[str]) -> Iterable[str]:
+    def assemble(self, _assembly: Iterable[str]) -> Iterable[str]:
         return []  # TODO: your work for Project 6 starts here
